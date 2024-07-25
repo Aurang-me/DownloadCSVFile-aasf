@@ -52,12 +52,16 @@ var information = [
 //     res.status(200).send(parsedData);
 
 // });
-// app.use(express.json());
-app.use('/', router);
-// try {
-//     sequelize.authenticate();
-//     console.log("database connection esteblished successfully");
-// } catch (error) {
-//     console.log("An error occured while connecting to database", error);
+app.use(express.json());
+app.use('/customer', router);
+app.get('/',(req,res)=>{
+    res.json({messsage: "hello form main"});
+})
+
+try {
+    sequelize.authenticate();
+    console.log("database connection esteblished successfully");
+} catch (error) {
+    console.log("An error occured while connecting to database", error);
     
-// }
+}
