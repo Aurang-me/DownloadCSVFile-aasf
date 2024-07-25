@@ -1,7 +1,7 @@
 require('dotenv').config;
 const express = require("express");
 const { router } = require("./Routes/indexRouter");
-const { sequelize } = require("./Database/dbConnection");
+// const { sequelize } = require("./Database/dbConnection");
 const port =  3000;
 // const {Parser} = require("json2csv");
 // const fs = require("fs");
@@ -58,10 +58,10 @@ app.get('/',(req,res)=>{
     res.json({messsage: "hello form main"});
 })
 
-try {
-    sequelize.authenticate();
-    console.log("database connection esteblished successfully");
-} catch (error) {
-    console.log("An error occured while connecting to database", error);
+// try {
+//     sequelize.authenticate();
+//     console.log("database connection esteblished successfully");
+// } catch (error) {
+//     console.log("An error occured while connecting to database", error);
     
-}
+// }
